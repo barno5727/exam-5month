@@ -14,9 +14,12 @@ import {
   showMore,
 } from "../assets";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebar }) => {
   return (
-    <div className="w-full max-w-[200px] h-screen pl-4  text-slate-400 ">
+    <div
+      className={`w-full max-w-[200px] h-screen pl-4  text-slate-400 max-md:${
+        sidebar ? "block" : "hidden"
+      }`}>
       <NavLink to="/" className="flex text-red gap-3 pt-7">
         <img src={home} alt="" />
         <span className="text-red-600">Home</span>

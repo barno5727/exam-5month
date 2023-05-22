@@ -19,7 +19,7 @@ function App() {
 
   // const [searchResult, setSearchResult] = useState([]);
   const [input, setInput] = useState("");
-
+  const [sidebar, setSidebar] = useState(false)
   const [videos, setVideos] = useState([]);
   
   const options = {
@@ -66,9 +66,12 @@ function App() {
           setInput={setInput}
           dark={dark}
           setDark={setDark}
+          sidebar={sidebar}
+          setSidebar={setSidebar}
         />
         <div className="h-full w-full flex items-start  ">
-          <Sidebar />
+          <Sidebar  sidebar={sidebar}
+          setSidebar={setSidebar} />
           <Routes >
             <Route path="/" element={<Home />} />
             <Route path="/playlist/vidio/:id" element={<Subscriptions />} />

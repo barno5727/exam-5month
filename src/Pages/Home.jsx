@@ -7,7 +7,7 @@ import axios from "axios";
 const Home = () => {
   const [videos, setVideos] = useState(null);
 
-const options = {
+  const options = {
     method: "GET",
     url: "https://youtube-v31.p.rapidapi.com/search",
     params: {
@@ -21,9 +21,6 @@ const options = {
       "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
     },
   };
-
-
-  
 
   const fetchVideos = async () => {
     try {
@@ -60,7 +57,7 @@ const options = {
   }, []);
 
   return (
-    <div className="grid grid-cols-4 grid-rows-5 gap-5 px-4 pt-7  rounded">
+    <div className="grid grid-cols-4 grid-rows-5 gap-5 px-4 pt-7  rounded max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
       {/* {!videos.length && <Loader />} */}
       {videos}
     </div>
