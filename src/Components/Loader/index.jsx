@@ -1,9 +1,9 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
 
 const Loader = () => {
   return (
-    <div class="lds-spinner">
+    <div className="lds-spinner">
       <div></div>
       <div></div>
       <div></div>

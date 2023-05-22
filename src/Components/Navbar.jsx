@@ -4,8 +4,10 @@ import { chime, logo, pathIcon, videoIcon } from "../assets";
 import { BiSearch } from "react-icons/bi";
 import { CiDark } from "react-icons/ci";
 import { BsPersonCircle } from "react-icons/bs";
+import { Link} from 'react-router-dom';
 
 const Navbar = ({ dark, setDark, input, setInput }) => {
+  console.log(input);
   return (
     <div className="w-full h-[70px] flex items-center justify-between">
       <div className=" flex h-full items-center justify-between w-full max-w-[1000px] pl-4">
@@ -16,7 +18,6 @@ const Navbar = ({ dark, setDark, input, setInput }) => {
             className="border-none bg-transparent w-full h-full outline-none"
             type="text"
             placeholder="search"
-
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -29,7 +30,8 @@ const Navbar = ({ dark, setDark, input, setInput }) => {
         <img src={pathIcon} alt="" />
         <img src={chime} alt="" />
         <CiDark size={30} color="grey" onClick={() => setDark(!dark)} />
-        <BsPersonCircle color="grey" size={30} />
+        <Link to="/login"> <BsPersonCircle color="grey" size={30} /> </Link>
+        
       </div>
     </div>
   );
